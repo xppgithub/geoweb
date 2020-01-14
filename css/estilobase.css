@@ -9,6 +9,17 @@ body {
 }
 
 .titulo {
-    background-color: pink;
+    background-color: red;
+    opacity: 85%;
     font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    left: 400px;
+    top: 25px;
+    z-index: 500;
+    height: 56px;
+    padding: 25px;
+    border: solid 3px black;
+    border-radius: 10px;
+
 }
