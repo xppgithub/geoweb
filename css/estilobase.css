@@ -20,6 +20,17 @@ body {
     height: 56px;
     padding: 25px;
     border: solid 4px black;
-    border-radius: 12px;
+    border-radius: 12px;}
 
-}
+.tÍtoL_terr {    background-color:greenyellow;
+    opacity: 85%;
+    font-size: 50px;
+    font-weight: bolder;
+    position: absolute;
+    left: 600px;
+    top: 20px;
+    z-index: 500;
+    height: 56px;
+    padding: 25px;
+    border: solid 2px black;
+    border-radius: 16px;}

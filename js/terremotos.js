@@ -30,13 +30,19 @@ function terremotosGeonamesToGeoJSON(respuestaGeonames){
 
     function generarPeticionTerremotos() {
 
+        var mg= 5;
+
+        if (map.getZoom()>8) {
+            mg=3;
+        };
+
         var peticion = 'http://api.geonames.org/earthquakesJSON?' +
             'north=' + map.getBounds()._ne.lat + '&' +
             'south=' + map.getBounds()._sw.lat + '&' +
             'east=' + map.getBounds()._ne.lng + '&' +
             'west=' + map.getBounds()._sw.lng + '&' +
             'maxRows=50&' +
-            'minMagnitude=5&' +
+            'minMagnitude='+mg+'&' +
             'username=masterupc&';
     
         enviarPeticion(peticion).then(function (respuestaGeonames) {
