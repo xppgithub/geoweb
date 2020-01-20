@@ -1,0 +1,57 @@
+<html>
+    <head>
+    <meta charset='utf-8' />
+    <title>Edificios</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='css/estilobase.css' rel='stylesheet' />
+    <script src='js/utils.js'></script>
+    <script src='js/edificios.js'></script>
+    <script>
+        //Añadir vuestor token y/o estilo !!
+        var map;
+        function init() {
+            mapboxgl.accessToken =
+                'pk.eyJ1IjoieHBwbWFwYm94IiwiYSI6ImNrNGIzcTFpYzA5d3IzZW14MXRnbGJzdGUifQ.jUQMgGV_VYxcIkhUOdCNxw';
+             map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/dark-v10',
+                center: [2.010337, 41.563853],
+                zoom: 15,
+                attributionControl: false,
+                pitch: 45,
+                hash: true
+            });
+ 
+            map.addControl(new mapboxgl.AttributionControl({ compact: true }));
+            map.addControl(new mapboxgl.NavigationControl());
+
+            map.on('load', function () {
+
+addEdificiosCapa();
+
+//addPopupToMap("edificios");
+
+addPopupToMapEdificios("edificios");
+
+}); //fin onload
+ 
+        } // final init
+    </script>
+    </head>
+ 
+    <body onload="init()">
+
+        <div class="titulo">Edificis Terrassa</div>
+        <div class="panelTopIzquierda">
+            <input onchange="activarEdificios (this.checked)" type="checkbox" checked>Edificios
+            <h5>Altura edificios</h5>
+            <label id="altura">Altura superior a 0 m</label>
+            
+            <input onChange="filtrarEdificios(this.value)" id="slider" type="range" min="1" max="20" step="5" value="0" />
+        </div>
+        <div id="map"></div>
+    </body>
+ 
+    </html>
