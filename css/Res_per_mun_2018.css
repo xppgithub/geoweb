@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color:darkgrey;
+}
+
+.maintitle {
+    position: absolute;
+    top: 15px;
+    left: 150px;
+    height: 70px;
+    width: auto;
+    font-size: 60px;
+    background-color: cyan;
+    padding: 30px;
+    border-radius: 15px;
+    border: solid 2px;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.subtitle,.subtitle1, .subtitle2, .subtitle3 {
+    position: absolute;
+    top: 18px;
+    left: 8px;
+    height: 18px;
+    width: auto;
+    font-size: 8px;
+    background-color: lightcyan;
+    padding: 9px;
+    border-radius: 10px;
+    border: solid 1px;
+    z-index: 1;
+    opacity: 90%;
+    font-family: Georgia;
+    font-weight: bolder;
+}
+
+.subtitle4 {
+    position: absolute;
+    top: 18px;
+    left: 30px;
+    height: 18px;
+    width: auto;
+    font-size: 9px;
+    background-color: skyblue;
+    padding: 9px;
+    border-radius: 10px;
+    border: solid 1px;
+    z-index: 1;
+    opacity: 90%;
+    font-family: Verdana;
+    font-weight: bolder;
+}
+
+#map {
+    position: absolute;
+    top: 160px;
+    left: 250px;
+    width: 400px;
+    height: 375px;
+    border-radius: 10px;
+
+}
+
+#map1 {
+    position: absolute;
+    top: 160px;
+    right: 250px;
+    width: 400px;
+    height: 375px;
+    border-radius: 10px;
+}
+
+#map2 {
+    position: absolute;
+    top: 560px;
+    left: 250px;
+    width: 400px;
+    height: 375px;
+    border-radius: 10px;
+}
+
+#map3 {
+    position: absolute;
+    top: 560px;
+    right:250px ;
+    width: 400px;
+    height: 375px;
+    border-radius: 10px;
+}
+#map4 {
+    position: absolute;
+    top: 360px;
+    right:750px ;
+    width: 400px;
+    height: 370px;
+    border-radius: 10px;
+}
+
+.popup_key {
+font-weight: bold;
+font-size:small;
+}
+
+.popup_value {
+font-weight: bolder;
+font-size:smaller;
+}
+.popup_key1 {
+font-weight: bold;
+font-size:smaller;}
+
+.popup_value1 {
+font-weight: bolder;
+font-size:8px
+}

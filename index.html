@@ -1,115 +1,166 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-  <title>Els meus mapes
-  </title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
-    crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    html {
-      overflow: hidden
-    }
-  </style>
+
+    <meta charset='utf-8' />
+    <title>Waste Collection figures - Catalonia 2000-2018</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='css/Res_per_mun_2018.css' rel='stylesheet' />
+    <script src='js/Res_per_mun_ addtom_addpoptom.js'></script>
+    <script src='js/Res_per_mun_ addtom1_addpoptom1.js'></script>
+    <script src='js/Res_per_mun_ addtom2_addpoptom2.js'></script>
+    <script src='js/Res_per_mun_ addtom3_addpoptom3.js'></script>
+    <script src='js/Res_per_mun_ addtom4_addpoptom4.js'></script>
+  
+    <script>
+
+        function Init() {
+    
+        mapboxgl.accessToken = '';
+        var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'https://tilemaps.icgc.cat/tileserver/styles/night.json',
+        center: [1.541994622, 41.827370473],
+        zoom: 6,
+        pitch: 15,
+        attributionControl: false
+        });
+
+            map.addControl(new mapboxgl.AttributionControl({
+            compact: true
+            }));
+            map.addControl(new mapboxgl.NavigationControl());
+            map.addControl(new mapboxgl.FullscreenControl());
+            
+        map.on('load', function () {
+            
+            addto_map(map);
+            addpopuptomap(map)
+
+        });
+
+
+        mapboxgl.accessToken = '';
+        var map1 = new mapboxgl.Map({
+        container: 'map1',
+        style: 'https://tilemaps.icgc.cat/tileserver/styles/night.json',
+        center: [1.541994622, 41.827370473],
+        zoom: 6,
+        pitch: 15,
+        attributionControl: false
+        });
+
+            map1.addControl(new mapboxgl.AttributionControl({
+                compact: true
+            }));
+            map1.addControl(new mapboxgl.NavigationControl());
+            map1.addControl(new mapboxgl.FullscreenControl());
+
+        map1.on('load', function () {
+
+            addto_map1(map1);
+            addpopuptomap1(map1)
+           
+        });
+  
+        mapboxgl.accessToken = '';
+        var map2 = new mapboxgl.Map({
+        container: 'map2',
+        style: 'https://tilemaps.icgc.cat/tileserver/styles/night.json',
+        center: [1.541994622, 41.827370473],
+        zoom: 6,
+        pitch: 15,
+        attributionControl: false
+        }); 
+
+            map2.addControl(new mapboxgl.AttributionControl({
+                compact: true
+            }));
+            map2.addControl(new mapboxgl.NavigationControl());
+            map2.addControl(new mapboxgl.FullscreenControl());
+
+        map2.on('load', function () {
+
+            addto_map2(map2);
+            addpopuptomap2(map2)
+        });
+            
+        mapboxgl.accessToken = '';
+        var map3 = new mapboxgl.Map({
+        container: 'map3',
+        style: 'https://tilemaps.icgc.cat/tileserver/styles/night.json',
+        center: [1.541994622, 41.827370473],
+        zoom: 6,
+        pitch: 15,
+        attributionControl: false
+        });
+            map3.addControl(new mapboxgl.AttributionControl({
+            compact: true
+            }));
+            map3.addControl(new mapboxgl.NavigationControl());
+            map3.addControl(new mapboxgl.FullscreenControl());
+
+        map3.on('load', function () {
+
+            addto_map3(map3);
+            addpopuptomap3(map3)  
+           
+        });
+       
+        mapboxgl.accessToken = "";
+        map4 = new mapboxgl.Map({
+        container: 'map4',
+        style: 'https://geoserveis.icgc.cat/contextmaps/fulldark.json',
+        center: [1.541994622, 41.827370473],
+        zoom: 6,
+        pitch: 15,
+        attributionControl: false
+        });
+            map4.addControl(new mapboxgl.AttributionControl({
+            compact: true
+            }));
+            map4.addControl(new mapboxgl.NavigationControl());  
+            map4.addControl(new mapboxgl.FullscreenControl());
+           
+        map4.on('load', function () {
+
+            addto_map4(map4);
+            addpopuptomap4(map4)          
+        })
+
+}
+    </script>
 </head>
+<body onload="Init()">
 
-<body>
-  <nav class="navbar navbar-light bg-light">
-    <a target="_self" class="navbar-brand" href="index.html">
-      Inici
-    </a>
-  </nav>
-  <div class="container">
-    <h5>Els meus mapes Leaflet</h5>
-    <ul>
-      <li>
-        <h6>
-          <a target="_blank" href="leaflet-basico.html">Leaflet-bàsic 20191218</a>
-        </h6>
-      </li>
-      <li>
-        <h6>
-          <a target="_blank" href="leaflet-controles.html">Leaflet-controls 20200108</a>
-        </h6>
-      </li>
-      <li>
-        <h6>
-          <a target="_blank" href="leaflet-providers.html">Leaflet-providers 20200108</a>
-        </h6>
-      </li> 
-      <li>
-        <h6>
-          <a target="_blank" href="mapabase.html">Leaflet-mapabase 20200108</a>
-        </h6>
-      </li>      
-      <li>
-          <h6>
-            <a target="_blank" href="farmacias.html">Buscador de farmàcies 20200110</a>
-          </h6>
-        </li>   
-    </ul>
-    <h5>Els meus mapes Mapbox</h5>
-    <ul>
-      <li>
-        <h6>
-          <a target="_blank" href="mapbox-bàsic.html">MapBox-bàsic 20200113</a>
-        </h6>
-      </li>
+<div>
+    
+    <div class= "maintitle">WASTE COLLECTION FIGURES - Catalonia 2000/2018</div>
 
-      <li>
-        <h6>
-          <a target="_blank" href="mapbox-ICGC.html">MapBox-ICGC 20200115</a>
-        </h6>
-      </li>
+    <div id='map'>
+        <div class="subtitle">2018 - SELECTIVE / TOTAL WASTE COLLECTION</div>
+    </div>
 
-      <li>
-        <h6>
-          <a target="_blank" href="mapbox-elmeuestil.html">MapBox-el meu estil 20200115</a>
-        </h6>
-      </li>
+    <div id='map1'>
+        <div class="subtitle1">2018 - TOTAL WASTE AMOUNT COLLECTION PER PERSON</div>
+    </div>
 
-      <li>
-        <h6>
-          <a target="_blank" href="terremotos.html">MapBox-terratrèmols 20200115</a>
-        </h6>
-      </li>
+    <div id='map2'>
+        <div class="subtitle2">2000-2018 - SELECTIVE / TOTAL WASTE COLLECTION EVOLUTION</div>
+    </div>
 
-      <li>
-          <h6>
-            <a target="_blank" href="edificis.html">MapBox-edificis 20200120</a>
-          </h6>
-        </li>
-</ul>
-    <h5>Els meus mapes Kepler</h5>
-      <ul>
-          <li>
-            <h6>
-              <a target="_blank" href="accedit.html">Kepler accidents 20200122</a>
-            </h6>
-          </li>
+    <div id='map3'>
+        <div class="subtitle3">2000-2018 - TOTAL WASTE AMOUNT COLLECTION PER PERSON EVOLUTION</div>
+    </div>
 
-          <li>
-            <h6>
-              <a target="_blank" href="iframe.html">Kepler accidents iframe 20200122</a>
-            </h6>
-          </li>
+    <div id='map4'>
+        <div class="subtitle4">GENERAL AND SELECTIVE COLLECTION PUBLIC FACILITIES</div>
+    </div> 
 
-        </h5>
-        </ul>
-  </div>
-
+</div> 
 
 
 </body>
-
 </html>
